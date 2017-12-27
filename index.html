@@ -61,18 +61,21 @@
                             <div id="dogimgdiv">
                                 <img id="dogsrc" img src="https://i.imgur.com/TUQvrsV.jpg">
                             </div>
-                            <!-- <a class="btn-floating halfway-fab waves-effect waves-light cyan accent-4"><i class="material-icons">add</i></a> -->
-                              <!-- Dropdown Trigger -->
-                            <a class='dropdown-button btn-floating halfway-fab waves-effect waves-light cyan accent-3' href='#' data-activates='dropdown1'><i class="material-icons">add</i></a>
+                            
+                            <!-- Dropdown Trigger -->
+                            <!-- <a class='dropdown-button btn-floating halfway-fab waves-effect waves-light cyan accent-3' data-activates='dropdown1'><i class="material-icons">add</i></a> -->
   
                             <!-- Dropdown Structure -->
-                            <ul id='dropdown1' class='dropdown-content'>
-                            <li><a href="#!">one</a></li>
+                            <select id="ddlDogs" class='dropdown-button btn-floating halfway-fab waves-effect waves-light cyan accent-3' data-activates='dropdown1'>
+                                <option></option>
+                            </select>
+                            <!-- <ul id='dropdown' class='dropdown-content'>
+                            <!-- <li><a href="#!">one</a></li>
                             <li><a href="#!">two</a></li>
                             <li><a href="#!">three</a></li>
-                            <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-                            <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-                            </ul>
+                            <li><a href="#!">four</a></li>
+                            <li><a href="#!">five</a></li> -->
+                            <!-- </ul> -->
                         </div>
                         <div class="card-content center-align">
                             <p class="white-text">This is my other application.</p>
@@ -148,6 +151,8 @@
         <script>
             $(document).ready(function(){
                 $("#loadingbar").hide()
+                $('.dropdown-button').dropdown('close')
+                
                 $("#dogbtn").click(function() {
                     $("#loadingbar").show()
                     $("#dogimgdiv").hide()
@@ -167,19 +172,28 @@
                             }
                         }});
                 })
-                $('.dropdown-button').dropdown( {
-                    // $("#loadingbar").show()
-                    // $("#dogimgdiv").hide()
-                    url: "https://dog.ceo/api/breeds/list/all",
-                    inDuration: 300,
-                    outDuration: 225,
-                    constrainWidth: false, // Does not change width of dropdown to that of the activator
-                    hover: true, // Activate on hover
-                    gutter: 0, // Spacing from edge
-                    belowOrigin: false, // Displays dropdown below the button
-                    alignment: 'left', // Displays dropdown with edge aligned to the left of button
-                    stopPropagation: false // Stops event propagation                   
+                $('.dropdown-button').click(function(){
+                    $('.dropdown-button').dropdown('open')                    
+                    $.ajax({
+                        type: "GET",
+                        url: "https://dog.ceo/api/breeds/list",
+                        dataType: "json",
+                        success: function( dogDrop ){
+                            if (dogDrop.status === "success"){
+                                var breed_list = dogDrop.message;
+                                $.each(breed_list,function(index,item){
+                                    $('#ddlDogs')
+                                        .append($("<option></option>")
+                                        .attr("item",index)
+                                        .text(item))
+                                });                
+                            }else{
+                                alert("error getting list of breeds")
+                            }
+                        } 
                     });
+                    // $('.dropdown-button').dropdown('close')
+                })
             })
         </script>
     </body>
