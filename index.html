@@ -1,241 +1,255 @@
 <html>
-    <header>
-            <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!--Import materialize.css-->
-        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+<header>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
 
-        <!--Let browser know website is optimized for mobile-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Meghan Fair</title>
-    </header>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meghan Fair</title>
+</header>
 
-    <body>
-        <!-- Header -->
-        <nav>
-            <div class="nav-wrapper cyan accent-4">
-                <div>
-                    <a href="#!" class="brand-logo center">Meghan Fair</a>
-                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+<body>
+    <!-- Header -->
+    <nav>
+        <div class="nav-wrapper cyan accent-4">
+            <div>
+                <a href="#!" class="brand-logo center">Meghan Fair</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse">
+                    <i class="material-icons">menu</i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <!-- Section for the 'about me'. -->
+            <div class="col s12 m4">
+                <div class="card cyan darken-3">
+                    <div class="card-image">
+                        <div id="meimgdiv">
+                            <img id="picofme" img src="Homepage_pic.jpg">
+                        </div>
+                        <a class="btn-floating halfway-fab waves-effect waves-light cyan accent-3" href="about_me.html">
+                            <i class="material-icons">add</i>
+                        </a>
+                    </div>
+                    <div class="card-content center-align">
+                        <p class="white-text">About Me.</p>
+                    </div>
                 </div>
             </div>
-        </nav>
+            <!-- Section for the dog card with pictures and button -->
+            <div class="col s12 m4">
+                <div class="card cyan darken-3">
+                    <div class="card-image">
+                        <div id="loadingbar" class="progress">
+                            <div class="indeterminate"></div>
+                        </div>
+                        <div id="dogimgdiv">
+                            <img id="dogsrc" src="https://i.imgur.com/TUQvrsV.jpg">
+                        </div>
+                        <a class="btn-floating halfway-fab waves-effect waves-light cyan accent-3" id="dogbtn">
+                            <i class="material-icons">add</i>
+                        </a>
+                    </div>
+                    <div class="card-content center-align">
+                        <p class="white-text">Click the button to get a picture of a random dog.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Section for other application. -->
+            <div class="col s12 m4">
+                <div class="card cyan darken-3">
+                    <div class="card-image">
+                        <div id="loadingbar2" class="progress">
+                            <div class="indeterminate"></div>
+                        </div>
+                        <div id="dogimgdiv2">
+                            <img id="dogsrc2" img src="https://i.imgur.com/TUQvrsV.jpg">
+                        </div>
 
+                        <!-- Dropdown Structure -->
+                        <select id="ddlDogs" class='dropdown-button btn-floating halfway-fab waves-effect waves-light cyan accent-3' data-activates='dropdown1'>
+                            <option></option>
+                        </select>
+                    </div>
+                    <div class="card-content center-align">
+                        <p class="white-text">Click the button to pick a breed, and get a random picture of that breed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="section">
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center cyan accent-3">
+                            <i class="material-icons darken-text">flash_on</i>
+                        </h2>
+                        <h5 class="center">About Meghan</h5>
+
+                        <p class="light">I a fourth year student doing a Bachelor of Science in Economics with a minor in Computer Science
+                            at the University of Victoria. Click the button to find out more about me.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center cyan accent-3">
+                            <i class="material-icons darken-text">pets</i>
+                        </h2>
+                        <h5 class="center">Get a Random Dog</h5>
+
+                        <p class="light">This widget allows you to click a button and get pictures of any random dog.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center cyan accent-3">
+                            <i class="material-icons darken-text">favorite</i>
+                        </h2>
+                        <h5 class="center">Choose a Dog</h5>
+
+                        <p class="light">This widget allows you to choose a dog breed from a dropdown list, and get a random picture of that
+                            breed.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- <br></br> -->
+    </div>
+    <!-- Footer -->
+    <footer class="page-footer cyan darken-1">
         <div class="container">
             <div class="row">
-                <!-- Section for the 'about me'. -->
-                <div class="col s12 m4">
-                    <div class="card cyan darken-3">
-                        <div class="card-image">
-                            <div id="meimgdiv">
-                                <img id="picofme" img src="Homepage_pic.jpg">
-                            </div>
-                            <a class="btn-floating halfway-fab waves-effect waves-light cyan accent-3"><i class="material-icons">add</i></a>
-                        </div>
-                        <div class="card-content center-align">
-                            <p class="white-text">About Me.</p>
-                        </div>
-                    </div>
+                <div class="col l4">
+                    <a class="white-text" href="#!">
+                        <h5 class="center-align">
+                            <i class="material-icons">portrait</i>Resume</h5>
+                    </a>
                 </div>
-                <!-- Section for the dog card with pictures and button -->
-                <div class="col s12 m4">
-                    <div class="card cyan darken-3">
-                        <div class="card-image">
-                            <div id="loadingbar" class="progress">
-                                <div class="indeterminate"></div>
-                            </div>
-                            <div id="dogimgdiv">
-                                <img id="dogsrc" src="https://i.imgur.com/TUQvrsV.jpg">
-                            </div>      
-                            <a class="btn-floating halfway-fab waves-effect waves-light cyan accent-3" id="dogbtn"><i class="material-icons">add</i></a>
-                        </div>
-                        <div class="card-content center-align">
-                            <p class="white-text">Click the button to get a picture of a random dog.</p>
-                        </div>
-                    </div>
+                <div class="col l4">
+                    <!-- <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script> -->
+                    <!-- <div class="LI-profile-badge"style="text-align:center"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="meghan-fair-05"><a class="LI-simple-link white-text" href='https://ca.linkedin.com/in/meghan-fair-05?trk=profile-badge'><i class="material-icons darken-text">public</i>Meghan Fair</a></div> -->
                 </div>
-                <!-- Section for other application. -->
-                <div class="col s12 m4">
-                    <div class="card cyan darken-3">
-                        <div class="card-image">
-                            <div id="loadingbar2" class="progress">
-                                <div class="indeterminate"></div>
-                            </div>
-                            <div id="dogimgdiv2">
-                                <img id="dogsrc2" img src="https://i.imgur.com/TUQvrsV.jpg">
-                            </div>
-                            
-                            <!-- Dropdown Structure -->
-                            <select id="ddlDogs" class='dropdown-button btn-floating halfway-fab waves-effect waves-light cyan accent-3' data-activates='dropdown1'>
-                                <option></option>
-                            </select>
-                        </div>
-                        <div class="card-content center-align">
-                            <p class="white-text">Click the button to pick a breed, and get a random picture of that breed.</p>
-                        </div>
-                    </div>
+                <div class="col l4">
+                    <a class="white-text" href="#!">
+                        <!-- <h5 class="center-align"><i class="material-icons darken-text">pets</i>Github</h5> -->
+                        <h5 class="center-align">
+                            <img id="github" img src="GitHub-Mark-Light-32px.png">GitHub</h5>
+                        <!-- <link rel="icon" type="image/png" href="http://example.com/image.png" /> -->
+                    </a>
                 </div>
-            </div>  
-        </div>
-        <div class="container">
-            <div class="section">                
-                <!--   Icon Section   -->
-                <div class="row">
-                    <div class="col s12 m4">
-                        <div class="icon-block">
-                        <h2 class="center cyan accent-3"><i class="material-icons darken-text">flash_on</i></h2>
-                        <h5 class="center">About Meghan</h5>
-            
-                        <p class="light">I a fourth year student doing a Bachelor of Science in Economics
-                                         with a minor in Computer Science at the University of Victoria.
-                                         Click the button to find out more about me.
-                        </p>
-                        </div>
-                    </div>
-        
-                    <div class="col s12 m4">
-                        <div class="icon-block">
-                        <h2 class="center cyan accent-3"><i class="material-icons darken-text">pets</i></h2>
-                        <h5 class="center">Get a Random Dog</h5>
-            
-                        <p class="light">This widget allows you to click a button and get pictures of any random dog.</p>
-                        </div>
-                    </div>
-        
-                    <div class="col s12 m4">
-                        <div class="icon-block">
-                        <h2 class="center cyan accent-3"><i class="material-icons darken-text">favorite</i></h2>
-                        <h5 class="center">Choose a Dog</h5>
-            
-                        <p class="light">This widget allows you to choose a dog breed from a dropdown list,
-                                         and get a random picture of that breed.
-                        </p>
-                        </div>
-                    </div>
-                </div>
-        
             </div>
-            <!-- <br></br> -->
         </div>
-                <!-- Footer -->
-                  <footer class="page-footer cyan darken-1">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col l4">
-                                <a class="white-text" href="#!">
-                                    <h5 class="center-align"><i class="material-icons">portrait</i>Resume</h5>
-                                </a>
-                            </div>
-                            <div class="col l4">
-                                <a class="white-text" href="#!">
-                                    <h5 class="center-align"><i class="material-icons darken-text">public</i>LinkedIn</h5>
-                                </a>
-                            </div>                        
-                            <div class="col l4">
-                                <a class="white-text" href="#!">
-                                    <!-- <h5 class="center-align"><i class="material-icons darken-text">pets</i>Github</h5> -->
-                                    <h5 class="center-align"><img id="github" img src="GitHub-Mark-Light-32px.png">GitHub</h5>
-                                    <!-- <link rel="icon" type="image/png" href="http://example.com/image.png" /> -->
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer-copyright">
-                      <div class="container"><p class="center-align">&copy Meghan Fair 2017</p></div>
-                    </div>
-                  </footer>
-        
-        <!--Import jQuery before materialize.js-->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script>
-            $(document).ready(function(){
-                $("#loadingbar").hide()
-                $("#loadingbar2").hide()
-                $('.dropdown-button').dropdown('close')
-                
-                $("#dogbtn").click(function() {
-                    $("#loadingbar").show()
-                    $("#dogimgdiv").hide()
-                    // When they click the button. Set display block on the progress bar 
-                    //and display none on the dog div, until the dog image has loaded
-                    $.ajax({
-                        type: "GET",
-                        url: "https://dog.ceo/api/breeds/image/random",
-                        cache: false,
-                        success: function( data ) {
-                            if (data.status === "success") {
-                                $("#dogsrc").attr("src", data.message)
-                                $("#dogsrc").on("load",function(){
-                                    $("#loadingbar").hide()
-                                    $("#dogimgdiv").show()
-                                });
-                            }
-                        }});
-                })
-                var loaded = false;
-                $('.dropdown-button').on('mouseover',function(){
-                    $("#loadingbar2").hide()
-                    $.ajax({
-                        // loaded = true,
-                        type: "GET",
-                        url: "https://dog.ceo/api/breeds/list",
-                        dataType: "json",
-                        success: function( dogDrop ){
-                            if (dogDrop.status === "success"){
-                                var breed_list = dogDrop.message;
-                                var seen = [];
-                                var seenCount = 0;                                        
-                                    $.each(breed_list,function(index,item){
-                                        if ($.inArray(item,seen) == -1){
-                                            seen.push(item);
-                                            seenCount += 1;
-                                            $('#ddlDogs')
-                                                .append($("<option></option>")
-                                                .attr("item",index)
-                                                .text(item));
-                                        }
-                                    });
-                                    // console.log(seen);
-                            }else {
-                                alert("Error getting list of breeds")
-                            }
+        <div class="footer-copyright">
+            <div class="container">
+                <p class="center-align">&copy Meghan Fair 2017</p>
+            </div>
+        </div>
+    </footer>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#loadingbar").hide()
+            $("#loadingbar2").hide()
+            $('.dropdown-button').dropdown('close')
+
+            $("#dogbtn").click(function () {
+                $("#loadingbar").show()
+                $("#dogimgdiv").hide()
+                // When they click the button. Set display block on the progress bar 
+                //and display none on the dog div, until the dog image has loaded
+                $.ajax({
+                    type: "GET",
+                    url: "https://dog.ceo/api/breeds/image/random",
+                    cache: false,
+                    success: function (data) {
+                        if (data.status === "success") {
+                            $("#dogsrc").attr("src", data.message)
+                            $("#dogsrc").on("load", function () {
+                                $("#loadingbar").hide()
+                                $("#dogimgdiv").show()
+                            });
                         }
-                    });
-                });    
-                $('.dropdown-button').on('click', function(){                                   
-                    $("#ddlDogs").change(function() {                                    
-                        $("#loadingbar2").show()
-                        $("#dogimgdiv2").hide()
-                        var breedChosen = $(this).val();
-                        // add address (dog breed chosen) to the url string at index 26?
-                        // "https://dog.ceo/api/breed/affenpinscher/images/random"
-                        var breedURL_start = "https://dog.ceo/api/breed/";
-                        var breedURL_end = "/images/random";
-                        var pos = 26;
-                        var output = [breedURL_start.slice(0,pos),breedChosen,breedURL_end].join('');
-                        $.ajax({
-                            type: "GET",
-                            url: output,
-                            dataType: "json",
-                            success: function( breedChoice ){
-                                console.log(breedChoice.status)
-                                if (breedChoice.status === "success"){
-                                    $("#dogsrc2").attr("src", breedChoice.message)
-                                    $("#dogsrc2").on("load",function(){
-                                        $("#loadingbar2").hide()
-                                        $("#dogimgdiv2").show()
-                                    });
-                                }else{
-                                    alert("Could not find pictures of that breed.")
-                                }
+                    }
+                });
+            })
+            var loaded = false;
+            $.ajax({
+                // loaded = true,
+                type: "GET",
+                url: "https://dog.ceo/api/breeds/list",
+                dataType: "json",
+                success: function (dogDrop) {
+                    if (dogDrop.status === "success") {
+                        var breed_list = dogDrop.message;
+                        var seen = [];
+                        var seenCount = 0;
+                        $.each(breed_list, function (index, item) {
+                            if ($.inArray(item, seen) == -1) {
+                                seen.push(item);
+                                seenCount += 1;
+                                $('#ddlDogs')
+                                    .append($("<option></option>")
+                                        .attr("item", index)
+                                        .text(item));
                             }
-                        });                            
-                    });
-                }); 
+                        });
+                        // console.log(seen);
+                    } else {
+                        alert("Error getting list of breeds")
+                    }
+                }
             });
-        </script>
-    </body>
+            $('.dropdown-button').on('mouseover', function () {
+                $("#loadingbar2").hide()
+            });
+            $('.dropdown-button').on('click', function () {
+                $("#loadingbar2").show()
+                $("#dogimgdiv2").hide()
+                var breedChosen = $(this).val();
+                // add address (dog breed chosen) to the url string at index 26?
+                // "https://dog.ceo/api/breed/affenpinscher/images/random"
+                var breedURL_start = "https://dog.ceo/api/breed/";
+                var breedURL_end = "/images/random";
+                var pos = 26;
+                var output = [breedURL_start.slice(0, pos), breedChosen, breedURL_end].join('');
+                $.ajax({
+                    type: "GET",
+                    url: output,
+                    dataType: "json",
+                    success: function (breedChoice) {
+                        console.log(breedChoice.status)
+                        if (breedChoice.status === "success") {
+                            $("#dogsrc2").attr("src", breedChoice.message)
+                            $("#dogsrc2").on("load", function () {
+                                $("#loadingbar2").hide()
+                                $("#dogimgdiv2").show()
+                            });
+                        } else {
+                            alert("Could not find pictures of that breed.")
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
 </html>
 
 <!-- 
