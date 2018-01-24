@@ -218,10 +218,7 @@
                     }
                 }
             });
-            $('.dropdown-button').on('mouseover', function () {
-                $("#loadingbar2").hide()
-            });
-            $('.dropdown-button').on('click', function () {
+            $('.dropdown-button').on('change', function () {
                 $("#loadingbar2").show()
                 $("#dogimgdiv2").hide()
                 var breedChosen = $(this).val();
