@@ -1,0 +1,207 @@
+<html>
+<header>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meghan Fair</title>
+</header>
+
+<body>
+    <!-- Header -->
+    <nav>
+        <div class="nav-wrapper cyan accent-4">
+            <div>
+                <a href="index.html" class="brand-logo center">Meghan Fair</a>
+                <a href="index.html" data-activates="mobile-demo" class="button-collapse">
+                    <i class="material-icons">menu</i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <!-- Section for the 'about me'. -->
+            <div class="col s12 m4">
+                <div class="card cyan darken-3">
+                    <div class="card-image">
+                        <div id="swimming_pic">
+                            <img id="swimmingpic" src="swim_pic.jpg">
+                        </div>
+                    </div>
+                    <!--  -->
+                </div>
+            </div>
+            <!-- Section for the dog card with pictures and button -->
+            <div class="col s12 m4">
+                <div class="card cyan darken-3">
+                    <div class="card-image">
+                        <div id="family_pic">
+                            <img id="familypic" src="family_pic.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Section for other application. -->
+            <div class="col s12 m4">
+                <div class="card cyan darken-3">
+                    <div class="card-image">
+                        <div id="alastair_pic">
+                            <img id="alastairpic" img src="alastair_pic.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="section">
+            <!--   Icon Section   -->
+            <div class="col s12">
+                <div class="card-panel cyan accent-3 center-align white-text row"></div>
+            </div>
+            <div class="row">
+                <p>I am currently in my fourth year of a Bachelor of Science in Economics, with a minor in Computer Science,
+                    at the University of Victoria. When not in school, I am spending my time coaching competitive swimming,
+                    going to music festivals, and improving my skills at website making and progamming.
+                </p>
+                <p>My hobbies include cooking, running, and sci-fi/fantasy films and television. I grew up swimming competitively,
+                    and I pass on my passion for swimming and fitnss by coaching kids. I have coached for three years, and
+                    I was Head Coach for the Revelstoke Aquaducks in 2017. I currently coach for the Gordon Head Geegee's
+                    Swim Club.
+                </p>
+                <p>I aspire to go into the fields of data analytics, web development, or software development after graduating
+                    from university.
+                </p>
+            </div>
+
+        </div>
+        <!-- <br></br> -->
+    </div>
+    <!-- Footer -->
+    <footer class="page-footer cyan darken-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l4">
+                    <a class="white-text" target="_blank" href="meghanfair_resume.pdf">
+                        <h5 class="center-align">
+                            <i class="material-icons">portrait</i>Resume</img>
+                    </a>
+                </div>
+                <div class="col l4">
+                    <a class="white-text" target="_blank" href="https://www.linkedin.com/in/meghan-fair-05/">
+                        <h5 class="center-align">
+                            <img id="github" img src="linked_in.png">LinkedIn</img>
+                    </a>
+                </div>
+                <div class="col l4">
+                    <a class="white-text" target="_blank" href="https://github.com/mkfair05/mkfair05.github.io">
+                        <h5 class="center-align">
+                            <img id="github" img src="GitHub-Mark-Light-32px.png">GitHub</img>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <p class="center-align">&copy Meghan Fair 2017</p>
+            </div>
+        </div>
+    </footer>
+
+    <!--Import jQuery before materialize.js-->
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#loadingbar").hide()
+                $("#loadingbar2").hide()
+                $('.dropdown-button').dropdown('close')
+                
+                $("#dogbtn").click(function() {
+                    $("#loadingbar").show()
+                    $("#dogimgdiv").hide()
+                    // When they click the button. Set display block on the progress bar 
+                    //and display none on the dog div, until the dog image has loaded
+                    $.ajax({
+                        type: "GET",
+                        url: "https://dog.ceo/api/breeds/image/random",
+                        cache: false,
+                        success: function( data ) {
+                            if (data.status === "success") {
+                                $("#dogsrc").attr("src", data.message)
+                                $("#dogsrc").on("load",function(){
+                                    $("#loadingbar").hide()
+                                    $("#dogimgdiv").show()
+                                });
+                            }
+                        }});
+                })
+                var loaded = false;
+                $('.dropdown-button').on('mouseover',function(){
+                    $("#loadingbar2").hide()
+                    $.ajax({
+                        // loaded = true,
+                        type: "GET",
+                        url: "https://dog.ceo/api/breeds/list",
+                        dataType: "json",
+                        success: function( dogDrop ){
+                            if (dogDrop.status === "success"){
+                                var breed_list = dogDrop.message;
+                                var seen = [];
+                                var seenCount = 0;                                        
+                                    $.each(breed_list,function(index,item){
+                                        if ($.inArray(item,seen) == -1){
+                                            seen.push(item);
+                                            seenCount += 1;
+                                            $('#ddlDogs')
+                                                .append($("<option></option>")
+                                                .attr("item",index)
+                                                .text(item));
+                                        }
+                                    });
+                                    // console.log(seen);
+                            }else {
+                                alert("Error getting list of breeds")
+                            }
+                        }
+                    });
+                });    
+                $('.dropdown-button').on('click', function(){                                   
+                    $("#ddlDogs").change(function() {                                    
+                        $("#loadingbar2").show()
+                        $("#dogimgdiv2").hide()
+                        var breedChosen = $(this).val();
+                        // add address (dog breed chosen) to the url string at index 26?
+                        // "https://dog.ceo/api/breed/affenpinscher/images/random"
+                        var breedURL_start = "https://dog.ceo/api/breed/";
+                        var breedURL_end = "/images/random";
+                        var pos = 26;
+                        var output = [breedURL_start.slice(0,pos),breedChosen,breedURL_end].join('');
+                        $.ajax({
+                            type: "GET",
+                            url: output,
+                            dataType: "json",
+                            success: function( breedChoice ){
+                                console.log(breedChoice.status)
+                                if (breedChoice.status === "success"){
+                                    $("#dogsrc2").attr("src", breedChoice.message)
+                                    $("#dogsrc2").on("load",function(){
+                                        $("#loadingbar2").hide()
+                                        $("#dogimgdiv2").show()
+                                    });
+                                }else{
+                                    alert("Could not find pictures of that breed.")
+                                }
+                            }
+                        });                            
+                    });
+                }); 
+            });
+        </script>
+    </body>
+</html> -->
