@@ -6,7 +6,7 @@
  * Made By MaterializeCSS.com
  */
 
-.icon-block {
+/* .icon-block {
   padding: 0 15px;
 }
 .icon-block .material-icons {
@@ -14,4 +14,8 @@
 }
 .header-leftpadding {
   padding: 0 15px;
+} */
+.no-margin {
+  margin-bottom: 0px;
+  margin-top: -8px;
 }

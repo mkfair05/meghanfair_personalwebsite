@@ -4,7 +4,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-
+    <link type="text/css" rel="stylesheet" href="css/style.css" media="screen,projection" />
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meghan Fair</title>
@@ -85,23 +85,45 @@
     <!-- Footer -->
     <footer class="page-footer cyan darken-1">
         <div class="container">
-            <div class="row">
-                <div class="col l4">
+            <div class="row no-margin">
+                <div class="col l4 no-margin">
                     <a class="white-text" target="_blank" href="meghanfair_resume.pdf">
                         <h5 class="center-align">
-                            <i class="material-icons">portrait</i>Resume</img>
+                            <i class="material-icons">portrait</i>
+                        </h5>
+                    </a>
+                </div>
+                <div class="col l4 no-margin">
+                    <a class="white-text" target="_blank" href="https://www.linkedin.com/in/meghan-fair-05/">
+                        <h5 class="center-align">
+                            <img id="github" img src="linked_in.png"></img>
+                        </h5>
+                    </a>
+                </div>
+                <div class="col l4 no-margin">
+                    <a class="white-text" target="_blank" href="https://github.com/mkfair05/mkfair05.github.io">
+                        <!-- <h5 class="center-align"><i class="material-icons darken-text">pets</i>Github</h5> -->
+                        <h5 class="center-align">
+                            <img id="github" img src="GitHub-Mark-Light-32px.png"></img>
+                        </h5>
+                    </a>
+                </div>
+            </div>
+            <div class="row no-margin">
+                <div class="col l4">
+                    <a class="white-text" target="_blank" href="meghanfair_resume.pdf">
+                        <h5 class="center-align">Resume</h5>
                     </a>
                 </div>
                 <div class="col l4">
                     <a class="white-text" target="_blank" href="https://www.linkedin.com/in/meghan-fair-05/">
-                        <h5 class="center-align">
-                            <img id="github" img src="linked_in.png">LinkedIn</img>
+                        <h5 class="center-align">LinkedIn</h5>
                     </a>
                 </div>
                 <div class="col l4">
                     <a class="white-text" target="_blank" href="https://github.com/mkfair05/mkfair05.github.io">
-                        <h5 class="center-align">
-                            <img id="github" img src="GitHub-Mark-Light-32px.png">GitHub</img>
+                        <!-- <h5 class="center-align"><i class="material-icons darken-text">pets</i>Github</h5> -->
+                        <h5 class="center-align">GitHub</h5>
                     </a>
                 </div>
             </div>
@@ -113,95 +135,7 @@
         </div>
     </footer>
 
-    <!--Import jQuery before materialize.js-->
-    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script>
-            $(document).ready(function(){
-                $("#loadingbar").hide()
-                $("#loadingbar2").hide()
-                $('.dropdown-button').dropdown('close')
-                
-                $("#dogbtn").click(function() {
-                    $("#loadingbar").show()
-                    $("#dogimgdiv").hide()
-                    // When they click the button. Set display block on the progress bar 
-                    //and display none on the dog div, until the dog image has loaded
-                    $.ajax({
-                        type: "GET",
-                        url: "https://dog.ceo/api/breeds/image/random",
-                        cache: false,
-                        success: function( data ) {
-                            if (data.status === "success") {
-                                $("#dogsrc").attr("src", data.message)
-                                $("#dogsrc").on("load",function(){
-                                    $("#loadingbar").hide()
-                                    $("#dogimgdiv").show()
-                                });
-                            }
-                        }});
-                })
-                var loaded = false;
-                $('.dropdown-button').on('mouseover',function(){
-                    $("#loadingbar2").hide()
-                    $.ajax({
-                        // loaded = true,
-                        type: "GET",
-                        url: "https://dog.ceo/api/breeds/list",
-                        dataType: "json",
-                        success: function( dogDrop ){
-                            if (dogDrop.status === "success"){
-                                var breed_list = dogDrop.message;
-                                var seen = [];
-                                var seenCount = 0;                                        
-                                    $.each(breed_list,function(index,item){
-                                        if ($.inArray(item,seen) == -1){
-                                            seen.push(item);
-                                            seenCount += 1;
-                                            $('#ddlDogs')
-                                                .append($("<option></option>")
-                                                .attr("item",index)
-                                                .text(item));
-                                        }
-                                    });
-                                    // console.log(seen);
-                            }else {
-                                alert("Error getting list of breeds")
-                            }
-                        }
-                    });
-                });    
-                $('.dropdown-button').on('click', function(){                                   
-                    $("#ddlDogs").change(function() {                                    
-                        $("#loadingbar2").show()
-                        $("#dogimgdiv2").hide()
-                        var breedChosen = $(this).val();
-                        // add address (dog breed chosen) to the url string at index 26?
-                        // "https://dog.ceo/api/breed/affenpinscher/images/random"
-                        var breedURL_start = "https://dog.ceo/api/breed/";
-                        var breedURL_end = "/images/random";
-                        var pos = 26;
-                        var output = [breedURL_start.slice(0,pos),breedChosen,breedURL_end].join('');
-                        $.ajax({
-                            type: "GET",
-                            url: output,
-                            dataType: "json",
-                            success: function( breedChoice ){
-                                console.log(breedChoice.status)
-                                if (breedChoice.status === "success"){
-                                    $("#dogsrc2").attr("src", breedChoice.message)
-                                    $("#dogsrc2").on("load",function(){
-                                        $("#loadingbar2").hide()
-                                        $("#dogimgdiv2").show()
-                                    });
-                                }else{
-                                    alert("Could not find pictures of that breed.")
-                                }
-                            }
-                        });                            
-                    });
-                }); 
-            });
-        </script>
-    </body>
-</html> -->
+
+</body>
+
+</html>
