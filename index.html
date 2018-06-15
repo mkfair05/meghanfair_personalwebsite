@@ -264,30 +264,28 @@
                             alert("Could not find pictures of that breed.")
                         }
                     }
-                    $(".dropdown-button").click(function () {
-                        $("#loadingbar2").show()
-                        $("#dogimgdiv2").hide()
-                        // When they click the button. Set display block on the progress bar
-                        //and display none on the dog div, until the dog image has loaded
-                        $.ajax({
-                            type: "GET",
-                            url: output,
-                            dataType: "json",
-                            success: function (breedChoice) {
-                              console.log(breedChoice.status)
-                              if (breedChoice.status === "success") {
-                                  $("#dogsrc2").attr("src", breedChoice.message)
-                                  $("#dogsrc2").on("load", function () {
-                                      $("#loadingbar2").hide()
-                                      $("#dogimgdiv2").show()
-                                  });
-                              } else {
-                                  alert("Could not find pictures of that breed.")
-                              }
-                            }
-                        });
+
                     })
                 });
+                $(".dropdown-button").click(function () {
+                    $("#loadingbar2").show()
+                    $("#dogimgdiv2").hide()
+                    // When they click the button. Set display block on the progress bar
+                    //and display none on the dog div, until the dog image has loaded
+                    $.ajax({
+                        type: "GET",
+                        url: "https://dog.ceo/api/breeds/image/random",
+                        cache: false,
+                        success: function (data) {
+                            if (data.status === "success") {
+                                $("#dogsrc2").attr("src", data.message)
+                                $("#dogsrc2").on("load", function () {
+                                    $("#loadingbar").hide()
+                                    $("#dogimgdiv").show()
+                                });
+                            }
+                        }
+                    });
             });
         });
     </script>
