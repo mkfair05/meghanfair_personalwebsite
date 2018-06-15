@@ -194,7 +194,7 @@
             $("#dogbtn").click(function () {
                 $("#loadingbar").show()
                 $("#dogimgdiv").hide()
-                // When they click the button. Set display block on the progress bar 
+                // When they click the button. Set display block on the progress bar
                 //and display none on the dog div, until the dog image has loaded
                 $.ajax({
                     type: "GET",
@@ -264,15 +264,37 @@
                             alert("Could not find pictures of that breed.")
                         }
                     }
-                });
+
+                  });
+                    $(".dropdown-button").click(function () {
+                        $("#loadingbar2").show()
+                        $("#dogimgdiv2").hide()
+                        // When they click the button. Set display block on the progress bar
+                        //and display none on the dog div, until the dog image has loaded
+                        $.ajax({
+                            type: "GET",
+                            url: output,
+                            cache: false,
+                            success: function (data) {
+                                if (data.status === "success") {
+                                    $("#dogsrc2").attr("src", data.message)
+                                    $("#dogsrc2").on("load", function () {
+                                        $("#loadingbar").hide()
+                                        $("#dogimgdiv").show()
+                                    });
+                                }
+                            }
+                        });
+                    });
             });
+
         });
     </script>
 </body>
 
 </html>
 
-<!-- 
+<!--
 public function get_breed(){
     //PHP function(maybe) to get a random picture from a breed chosen
     //from a dropdownlist
