@@ -3,18 +3,22 @@
 }
 
 .App-header {
-  background-color:#8f5e5e;
+  /* background-color:#8f5e5e; */
   /* min-height: 100vh; */
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
-  /* color: white; */
+  color: #070202;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.Main-Page-Icons {
+  display: flex;
+  flex-direction: row;
 }
 
 @keyframes App-logo-spin {

@@ -6,7 +6,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color:#eeeeeeee
+  background-color:#eeeeeeee;
+  background: url("./Pictures/black-and-white-clouds-dawn-276374.jpg");
+  background-size: auto;
 }
 
 code {
