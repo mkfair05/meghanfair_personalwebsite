@@ -11,6 +11,7 @@ DNS: www.namecheap.com
 
 DEVELOPING ENVIRONMENT:
     npm live server module
+    bootstrapped with 
 
 DEPLOYING / PUBLISHING: 
     Hosting through github pages.
