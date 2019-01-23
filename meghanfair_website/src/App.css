@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.Conatiner {
+  text-align: center;  
+}
+
 .App-header {
   /* background-color:#8f5e5e; */
   /* min-height: 100vh; */
@@ -12,6 +16,11 @@
   color: #070202;
 }
 
+.App-Title {
+  display:flex;
+  justify-content: flex-start;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -19,6 +28,7 @@
 .Main-Page-Icons {
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
 }
 
 @keyframes App-logo-spin {

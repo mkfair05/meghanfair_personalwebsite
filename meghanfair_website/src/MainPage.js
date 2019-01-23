@@ -6,16 +6,16 @@ class MainPage extends Component {
 
     render() {
         return (
-            <div className="App">
+            <div className="Container">
                 <Row className="App-header">
-                <Col xl={12} l={12} m={12}>
-                    <div>
-                        <h1 className="App-title">Meghan Fair</h1>
-                    </div>
-                
-                </Col>
-                    <div>
-                        <div className="Main-Page-Icons">
+                    <Col xl={12} l={12} m={12} className="App-Title">
+                        <div>
+                            <h1>Meghan Fair</h1>
+                        </div>
+                    
+                    </Col>
+                    <div className="Main-Page-Icons">
+                        <div>
                             <i class="fas fa-home"></i>
                         </div>
                         <div>
