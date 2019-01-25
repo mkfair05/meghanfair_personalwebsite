@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import MainPage from './MainPage';
+import AboutMe from './AboutMe';
 
 class App extends Component {
 
@@ -25,7 +26,12 @@ class App extends Component {
           <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
           {/* <!-- And then your bundled js --> */}
           <script src="path/to/your/bundle.js"></script>
+          
+          <script src="https://unpkg.com/react-router/umd/react-router.min.js"></script>
+          <script src="https://unpkg.com/react-router-dom/umd/react-router-dom.min.js"></script>
+
           <MainPage/>
+          <AboutMe/>
         </body>
 
       </div>

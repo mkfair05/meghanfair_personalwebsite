@@ -52,6 +52,27 @@
   background-color: transparent;
 }
 
+.fa-home:before {
+  color: darkred;
+}
+
+.fa-user:before {
+  color: darkred;
+}
+
+.fa-file-pdf:before {
+  color: darkred;
+}
+
+.fa-github:before {
+  color: darkred;
+}
+
+.fa-linkedin-in:before {
+  color: darkred;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
