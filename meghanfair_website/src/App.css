@@ -1,83 +1,24 @@
 .App {
-  text-align: center;
+  height: 100%;
+  width: 100%;
 }
 
 .Conatiner {
-  text-align: center;  
+  height: auto;
+  width: auto;
+  position: absolute;
+  display: block;
 }
 
-.wrapper {
-  display: flex;
+nav .brand-logo {
+  position: absolute;
+  display: inline-block;
+  font-size: 2.1rem;
+  padding: 0;
+  white-space: nowrap;
 }
 
-.App-header {
-  /* background-color:#8f5e5e; */
-  /* min-height: 100vh; */
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  font-size: calc(10px + 2vmin);
-  color: #000000;
-}
-
-.App-Title {
-  display:flex;
-  justify-content: flex-start;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-.Main-Page-Icons {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
-.Icon {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-.Header-Icons {
-  display: flex;
-  flex-direction: row;
-  margin-right: 10px;
-}
-
-.Icon-Btn {
-  color: black;
+.App-navbar{
   background-color: transparent;
-}
-
-.fa-home:before {
-  color: darkred;
-}
-
-.fa-user:before {
-  color: darkred;
-}
-
-.fa-file-pdf:before {
-  color: darkred;
-}
-
-.fa-github:before {
-  color: darkred;
-}
-
-.fa-linkedin-in:before {
-  color: darkred;
-}
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  box-shadow: none;
 }
