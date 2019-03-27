@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import ReusableSideNav from './ReusableSideNav';
 import {Navbar, NavItem, Icon} from 'react-materialize';
 import AboutMe from './AboutMe.js';
 
@@ -12,7 +13,8 @@ class HeaderIcons extends Component {
     }
     render(){
         return(
-            <Navbar brand="Meghan Fair" href='MainPage.js' className="App-navbar brand-logo" left>
+            <Navbar brand="Meghan Fair" className="brand-logo App-navbar" left>
+                <ReusableSideNav/>
                 <NavItem href='MainPage.js'>
                     <Icon>home</Icon>
                 </NavItem>
@@ -25,7 +27,7 @@ class HeaderIcons extends Component {
                 <NavItem href="https://github.com/mkfair05/mkfair05.github.io">
                     <i className="fab fa-github"></i>
                 </NavItem>
-                <NavItem>
+                <NavItem href="https://www.linkedin.com/in/meghan-fair-05/" target="_blank">
                     <i className="fab fa-linkedin-in"></i>
                 </NavItem>
             </Navbar>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import {ReusableSideNav} from './ReusableSideNav';
 // import {Row, Col, Button} from 'react-materialize';
 import AboutMe from './AboutMe.js';
 // import {Route, Redirect, Link} from 'react-router-dom';
@@ -13,7 +14,9 @@ class MainPage extends Component {
     render() {
         return (
             <div className='body'>
-                {/* <HeaderIcons/> */}
+                <HeaderIcons/>
+                {/* <ReusableSideNav/> */}
+
             </div>
         );
     }

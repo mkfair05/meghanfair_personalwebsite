@@ -1,0 +1,22 @@
+import 'react' from 'React'
+import sideNave from 'react/materialcomponent'
+
+class ResusableSideNav extends React.component {
+    render(){
+        return(
+            <SideNav
+                trigger={<Button></Button>}
+                options={{ closeOnClick: true }}
+            >
+                <SideNavItem userView
+                        user={{
+                        background: 'img/office.jpg',
+                        image: 'img/yuna.jpg',
+                        name: this.Prop1.value,
+                        email: this.Prop2.value
+                    }}
+                />
+            </SideNav>
+        )
+    }
+}
