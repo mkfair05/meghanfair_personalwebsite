@@ -5,12 +5,15 @@ import {
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: '100%',
+    maxWidth: '50%',
     margin: '15px'
   },
+  media:{
+      height:'100%'
+  }
 });
 
-function fetchQuote() {
+function fetchNasaImage() {
     return fetch('https://api.nasa.gov/planetary/apod?api_key=UnfMWA36C3iNWiYftoHBzUf6bRzKN9seQy7Hrvn4') // fetch a response from the api
         .then((response) => { 
             let json = response.json(); // then assign the JSON'd response to a var
@@ -27,13 +30,11 @@ export default function ImgMediaCard() {
 
 
   const fetchMyAPI = async () => {
-    let json = await fetchQuote();
-    console.log(json)
+    let json = await fetchNasaImage();
     setDate(json.date);
     setExplanation(json.explanation);
     setUrl(json.url)
     setTitle(json.title)
-
   }
 
   useEffect(() => {
@@ -43,7 +44,7 @@ export default function ImgMediaCard() {
     return (
         <Card className={classes.root}>
             <CardActionArea>
-                <CardMedia
+                <CardMedia className={classes.media}
                 component="img"
                 alt="Contemplative Reptile"
                 height="140"
@@ -53,6 +54,9 @@ export default function ImgMediaCard() {
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
                     {title}
+                    </Typography>
+                    <Typography gutterBottom variant="h7" component="h2">
+                    {date}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
                     {explanation}
