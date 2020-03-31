@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { 
     makeStyles, Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography
 } from '@material-ui/core';
@@ -10,8 +10,36 @@ const useStyles = makeStyles({
   },
 });
 
+function fetchQuote() {
+    return fetch('https://api.nasa.gov/planetary/apod?api_key=UnfMWA36C3iNWiYftoHBzUf6bRzKN9seQy7Hrvn4') // fetch a response from the api
+        .then((response) => { 
+            let json = response.json(); // then assign the JSON'd response to a var
+            return json; // return that bad boy
+    });
+}
+
 export default function ImgMediaCard() {
   const classes = useStyles();
+  const [date, setDate] = useState('');
+  const [explanation, setExplanation] = useState('')
+  const [url, setUrl] = useState('')
+  const [title, setTitle] = useState('')
+
+
+  const fetchMyAPI = async () => {
+    let json = await fetchQuote();
+    console.log(json)
+    setDate(json.date);
+    setExplanation(json.explanation);
+    setUrl(json.url)
+    setTitle(json.title)
+
+  }
+
+  useEffect(() => {
+   fetchMyAPI();
+  }, []);
+
     return (
         <Card className={classes.root}>
             <CardActionArea>
@@ -19,16 +47,15 @@ export default function ImgMediaCard() {
                 component="img"
                 alt="Contemplative Reptile"
                 height="140"
-                src='hiii'
+                src={url}
                 title="Nasa Image of the Day"
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                    Nasa Image of the Day
+                    {title}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarctica
+                    {explanation}
                     </Typography>
                 </CardContent>
             </CardActionArea>
