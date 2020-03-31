@@ -16,8 +16,8 @@ const useStyles = makeStyles({
 function fetchNasaImage() {
     return fetch('https://api.nasa.gov/planetary/apod?api_key=UnfMWA36C3iNWiYftoHBzUf6bRzKN9seQy7Hrvn4') // fetch a response from the api
         .then((response) => { 
-            let json = response.json(); // then assign the JSON'd response to a var
-            return json; // return that bad boy
+            let json = response.json();
+            return json;
     });
 }
 
@@ -52,14 +52,14 @@ export default function ImgMediaCard() {
                 title="Nasa Image of the Day"
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <Typography gutterBottom variant="h4" component="h2">
                     {title}
                     </Typography>
-                    <Typography gutterBottom variant="h7" component="h2">
-                    {date}
+                    <Typography gutterBottom variant="h5" component="h2">
+                    NASA Astronomy Picture of the Day
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                    {explanation}
+                    <Typography gutterBottom variant="h5" component="h2">
+                    {date}
                     </Typography>
                 </CardContent>
             </CardActionArea>
@@ -67,7 +67,7 @@ export default function ImgMediaCard() {
                 <Button size="small" color="primary">
                     Share
                 </Button>
-                <Button size="small" color="primary">
+                <Button size="small" color="primary" href="https://apod.nasa.gov/apod/astropix.html" target="_blank">
                     Learn More
                 </Button>
             </CardActions>
