@@ -4,7 +4,9 @@ import {
   AppBar, Toolbar, Typography, makeStyles, CssBaseline, useScrollTrigger, Fab, Zoom
 } from '@material-ui/core';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import IconButton from '@material-ui/core/IconButton';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -65,6 +67,20 @@ export default function BackToTop(props) {
       <AppBar className={classes.header}>
         <Toolbar>
           <Typography variant="h6">Meghan Fair</Typography>
+          <IconButton
+            aria-label="LinkedIn"
+            edge="false"
+            color="inherit"
+          >
+            <LinkedInIcon />
+          </IconButton>
+          <IconButton
+            aria-label="Github"
+            edge="false"
+            color="inherit"
+          >
+            <GitHubIcon />
+          </IconButton>
         </Toolbar>
       </AppBar>
       <Toolbar id="back-to-top-anchor" />

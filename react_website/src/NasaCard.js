@@ -14,7 +14,7 @@ const useStyles = makeStyles({
 });
 
 function fetchNasaImage() {
-    return fetch('https://api.nasa.gov/planetary/apod?api_key=UnfMWA36C3iNWiYftoHBzUf6bRzKN9seQy7Hrvn4') // fetch a response from the api
+    return fetch('https://api.nasa.gov/planetary/apod?api_key=UnfMWA36C3iNWiYftoHBzUf6bRzKN9seQy7Hrvn4')
         .then((response) => { 
             let json = response.json();
             return json;
