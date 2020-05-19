@@ -7,17 +7,45 @@ import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import IconButton from '@material-ui/core/IconButton';
+import AttachmentIcon from '@material-ui/icons/Attachment';
 
-const useStyles = makeStyles(theme => ({
+// const useStyles = makeStyles(theme => ({
+//   root: {
+//     position: 'fixed',
+//     bottom: theme.spacing(2),
+//     right: theme.spacing(2),
+//   },
+//   header: {
+//     backgroundColor: '#3c3c3c'
+//   },
+//   headerIcons: {
+//     display: 'none',
+//     position: 'relative',
+//     justifyContent: 'right',
+//     [theme.breakpoints.up('sm')]: {
+//       display: 'flex',
+//     },
+//   },
+// }));
+
+const useStyles = makeStyles({
   root: {
     position: 'fixed',
-    bottom: theme.spacing(2),
-    right: theme.spacing(2),
+    bottom: '100px',
+    right: '100px',
   },
   header: {
     backgroundColor: '#3c3c3c'
-  }
-}));
+  },
+  headerItems: {
+    display: 'flex',
+    justifyContent: 'space-between'
+  },
+  headerIcons: {
+    display: 'inline-flex',
+    justifyContent: 'space-evenly',
+  },
+});
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -64,23 +92,32 @@ export default function BackToTop(props) {
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar className={classes.header}>
-        <Toolbar>
+      <AppBar className={classes.header} position='static'>
+        <Toolbar className={classes.headerItems}>
           <Typography variant="h6">Meghan Fair</Typography>
-          <IconButton
-            aria-label="LinkedIn"
-            edge="false"
-            color="inherit"
-          >
-            <LinkedInIcon />
-          </IconButton>
-          <IconButton
-            aria-label="Github"
-            edge="false"
-            color="inherit"
-          >
-            <GitHubIcon />
-          </IconButton>
+          <div className={classes.headerIcons}>
+            <IconButton
+              aria-label="LinkedIn"
+              edge="none"
+              color="inherit"
+            >
+              <LinkedInIcon />
+            </IconButton>
+            <IconButton
+              aria-label="Github"
+              edge="none"
+              color="inherit"
+            >
+              <GitHubIcon />
+            </IconButton>
+            <IconButton
+              aria-label="Attachment"
+              edge="none"
+              color="inherit"
+            >
+              <AttachmentIcon />
+            </IconButton>
+          </div>
         </Toolbar>
       </AppBar>
       <Toolbar id="back-to-top-anchor" />

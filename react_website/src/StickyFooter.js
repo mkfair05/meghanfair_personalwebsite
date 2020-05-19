@@ -43,7 +43,6 @@ export default function StickyFooter() {
       <CssBaseline />
       <footer className={classes.footer}>
         <Container maxWidth="sm">
-          <Typography variant="body1">Linked In  Github  Resume</Typography>
           <Copyright />
         </Container>
       </footer>
