@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  AppBar, Toolbar, Typography, makeStyles, CssBaseline, useScrollTrigger, Fab, Zoom
+  AppBar, Toolbar, Typography, makeStyles, CssBaseline, useScrollTrigger, Fab, Zoom, Link
 } from '@material-ui/core';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -95,28 +95,35 @@ export default function BackToTop(props) {
       <AppBar className={classes.header} position='static'>
         <Toolbar className={classes.headerItems}>
           <Typography variant="h6">Meghan Fair</Typography>
+          
           <div className={classes.headerIcons}>
-            <IconButton
-              aria-label="LinkedIn"
-              edge="none"
-              color="inherit"
-            >
-              <LinkedInIcon />
-            </IconButton>
-            <IconButton
-              aria-label="Github"
-              edge="none"
-              color="inherit"
-            >
-              <GitHubIcon />
-            </IconButton>
-            <IconButton
-              aria-label="Attachment"
-              edge="none"
-              color="inherit"
-            >
-              <AttachmentIcon />
-            </IconButton>
+            <Link href="https://www.linkedin.com/in/meghan-fair/" color="inherit" target="_blank" rel="noopener">
+              <IconButton
+                aria-label="LinkedIn"
+                edge="none"
+                color="inherit"
+                >
+                <LinkedInIcon />
+              </IconButton>
+            </Link>
+            <Link href="https://www.github.com/mkfair05" color="inherit" target="_blank" rel="noopener">
+              <IconButton
+                aria-label="Github"
+                edge="none"
+                color="inherit"
+                >
+                <GitHubIcon />
+              </IconButton>
+            </Link>
+            <Link href="https://docs.google.com/document/d/1HjgxAmvfQPClLx66Y43t4VGWWSc1HR7AIFbqhlCDHuk/edit?usp=sharing" color="inherit" target="_blank" rel="noopener">
+              <IconButton
+                aria-label="Attachment"
+                edge="none"
+                color="inherit"
+                >
+                <AttachmentIcon />
+              </IconButton>
+            </Link>
           </div>
         </Toolbar>
       </AppBar>
