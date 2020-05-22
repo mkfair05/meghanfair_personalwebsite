@@ -8,37 +8,41 @@ const useStyles = makeStyles({
     maxWidth: '50%',
     margin: '15px'
   },
-  media:{
-      height:'100%'
+  media: {
+    height: '100%'
+  },
+  explanation: {
+    padding: '10px'
   }
 });
-
-function fetchNasaImage() {
-    return fetch('https://api.nasa.gov/planetary/apod?api_key=UnfMWA36C3iNWiYftoHBzUf6bRzKN9seQy7Hrvn4')
-        .then((response) => { 
-            let json = response.json();
-            return json;
-    });
-}
 
 export default function ImgMediaCard() {
   const classes = useStyles();
   const [date, setDate] = useState('');
-  const [explanation, setExplanation] = useState('')
   const [url, setUrl] = useState('')
   const [title, setTitle] = useState('')
-
-
-  const fetchMyAPI = async () => {
-    let json = await fetchNasaImage();
-    setDate(json.date);
-    setExplanation(json.explanation);
-    setUrl(json.url)
-    setTitle(json.title)
-  }
-
+  const [explanation, setExplanation] = useState('')
+  
   useEffect(() => {
-   fetchMyAPI();
+
+    function fetchNasaImage () {
+        return fetch('https://api.nasa.gov/planetary/apod?api_key=UnfMWA36C3iNWiYftoHBzUf6bRzKN9seQy7Hrvn4')
+            .then((response) => { 
+                let json = response.json();
+                return json;
+        });
+    }
+
+    const fetchMyAPI = async () => {
+        let json = await fetchNasaImage();
+        console.log(json)
+        setDate(json.date);
+        setExplanation(json.explanation);
+        setUrl(json.url)
+        setTitle(json.title)
+    };
+
+    fetchMyAPI();
   }, []);
 
     return (
@@ -60,6 +64,9 @@ export default function ImgMediaCard() {
                     </Typography>
                     <Typography gutterBottom variant="h5" component="h2">
                     {date}
+                    </Typography>
+                    <Typography className={classes.explanation}gutterBottom variant="h7" component="h2">
+                    {explanation}
                     </Typography>
                 </CardContent>
             </CardActionArea>
