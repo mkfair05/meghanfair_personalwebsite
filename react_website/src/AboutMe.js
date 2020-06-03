@@ -8,10 +8,10 @@ export default function MediaCard() {
   const styles = Styles();
 
   return (
-    <Card className={styles.root}>
+    <Card className={styles.cardRoot}>
       <CardActionArea>
         <CardMedia
-          className={styles.media}
+          className={styles.cardMedia}
           //TODO: get photo of me
         //   image="https://picsum.photos/200/300"
           title="About Meghan"

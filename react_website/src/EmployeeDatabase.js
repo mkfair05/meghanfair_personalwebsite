@@ -30,9 +30,9 @@ export default function ImgMediaCard() {
   }, []);
 
     return (
-        <Card className={styles.root}>
+        <Card className={styles.cardRoot}>
             <CardActionArea>
-                <CardMedia className={styles.media}
+                <CardMedia className={styles.cardMedia}
                 component="img"
                 alt="In Progress"
                 src={url}

@@ -1,42 +1,43 @@
 import React from 'react';
 import {
-  AppBar, Toolbar, Typography, makeStyles, CssBaseline, Link
+  AppBar, Toolbar, Typography, CssBaseline, Link
 } from '@material-ui/core';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import IconButton from '@material-ui/core/IconButton';
+import Styles from './Styles'
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    position: 'fixed',
-    bottom: theme.spacing(2),
-    right: theme.spacing(2),
-  },
-  header: {
-    backgroundColor: '#3c3c3c'
-  },
-  headerIcons: {
-    display: 'inline-flex',
-    justifyContent: 'space-evenly',
-    position: 'relative',
-  },
-  headerItems: {
-    display: 'flex',
-    justifyContent: 'space-between'
-  },
-}));
+// const useStyles = makeStyles(theme => ({
+//   root: {
+//     position: 'fixed',
+//     bottom: theme.spacing(2),
+//     right: theme.spacing(2),
+//   },
+//   header: {
+//     backgroundColor: '#3c3c3c'
+//   },
+//   headerIcons: {
+//     display: 'inline-flex',
+//     justifyContent: 'space-evenly',
+//     position: 'relative',
+//   },
+//   headerItems: {
+//     display: 'flex',
+//     justifyContent: 'space-between'
+//   },
+// }));
 
 export default function BackToTop(props) {
-  const classes = useStyles();
+  const styles = Styles();
 
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar className={classes.header} position='static'>
-        <Toolbar className={classes.headerItems}>
+      <AppBar className={styles.header} position='static'>
+        <Toolbar className={styles.headerItems}>
           <Typography variant="h6">Meghan Fair</Typography>
           
-          <div className={classes.headerIcons}>
+          <div className={styles.headerIcons}>
             <Link href="https://www.linkedin.com/in/meghan-fair/" color="inherit" target="_blank" rel="noopener">
               <IconButton
                 aria-label="LinkedIn"

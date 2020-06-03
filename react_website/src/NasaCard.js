@@ -32,9 +32,9 @@ export default function ImgMediaCard() {
   }, []);
 
     return (
-        <Card className={styles.root}>
+        <Card className={styles.cardRoot}>
             <CardActionArea>
-                <CardMedia className={styles.media}
+                <CardMedia className={styles.cardMedia}
                 //TODO: if the url is a youtube video
                 component="iframe"
                 alt="Nasa Image"

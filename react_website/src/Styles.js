@@ -1,13 +1,25 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
-    root: {
+    cardRoot: {
       width: '30%',
       margin: '15px',
       height: '75%'
     },
-    media: {
+    cardMedia: {
       height: '100%'
+    },
+    header: {
+      backgroundColor: '#3c3c3c'
+    },
+    headerIcons: {
+      display: 'inline-flex',
+      justifyContent: 'space-evenly',
+      position: 'relative',
+    },
+    headerItems: {
+      display: 'flex',
+      justifyContent: 'space-between'
     },
 });
 
