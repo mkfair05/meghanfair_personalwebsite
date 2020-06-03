@@ -1,30 +1,17 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
-
-const useStyles = makeStyles({
-  root: {
-    width: '30%',
-    margin: '15px',
-    height: '75%'
-  },
-  media: {
-    height: '100%'
-  },
-});
+import Styles from './Styles'
+import { 
+    Card, CardActionArea, CardContent, CardMedia, Typography
+} from '@material-ui/core';
 
 export default function MediaCard() {
-  const classes = useStyles();
+  const styles = Styles();
 
   return (
-    <Card className={classes.root}>
+    <Card className={styles.root}>
       <CardActionArea>
         <CardMedia
-          className={classes.media}
+          className={styles.media}
           //TODO: get photo of me
         //   image="https://picsum.photos/200/300"
           title="About Meghan"

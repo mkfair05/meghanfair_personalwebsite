@@ -1,28 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import { 
-    makeStyles, Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography
+    Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography
 } from '@material-ui/core';
+import Styles from './Styles'
 
 // This file is called EmployeeDatabase because once I complete set up of an RDS instance through AWS, I will either move this website to
 // an Apache webserver hosted on EC2, or I will create a small web app on this website that will show the mock database. For now,
 // this file shows in image media card that describes my journey learning AWS.
 
-const useStyles = makeStyles({
-  root: {
-    width: '30%',
-    margin: '15px',
-    height: '50%'
-  },
-  media: {
-    height: '100%'
-  },
-  explanation: {
-    padding: '10px'
-  }
-});
-
 export default function ImgMediaCard() {
-  const classes = useStyles();
+  const styles = Styles();
   const [url, setUrl] = useState('')
   
   useEffect(() => {
@@ -43,9 +30,9 @@ export default function ImgMediaCard() {
   }, []);
 
     return (
-        <Card className={classes.root}>
+        <Card className={styles.root}>
             <CardActionArea>
-                <CardMedia className={classes.media}
+                <CardMedia className={styles.media}
                 component="img"
                 alt="In Progress"
                 src={url}
@@ -56,7 +43,7 @@ export default function ImgMediaCard() {
                     <Typography gutterBottom variant="h4" component="h2">
                       In Progress
                     </Typography>
-                    <Typography className={classes.explanation} gutterBottom variant="textSecondary" component="p">
+                    <Typography className={styles.explanation} gutterBottom variant="textSecondary" component="p">
                       While I apply for Full Stack Developer positions, I am learning how to set up a database through Amazon Web Services.
                       I am doing this to show that I have the skill set for both front end and back end applications.
 
