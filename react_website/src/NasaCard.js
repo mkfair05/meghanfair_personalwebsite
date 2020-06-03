@@ -5,7 +5,7 @@ import {
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: '50%',
+    maxWidth: '30%',
     margin: '15px'
   },
   media: {
@@ -50,7 +50,7 @@ export default function ImgMediaCard() {
             <CardActionArea>
                 <CardMedia className={classes.media}
                 component="img"
-                alt="Contemplative Reptile"
+                alt="Nasa Image"
                 height="140"
                 src={url}
                 title="Nasa Image of the Day"
@@ -71,9 +71,6 @@ export default function ImgMediaCard() {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" color="primary">
-                    Share
-                </Button>
                 <Button size="small" color="primary" href="https://apod.nasa.gov/apod/astropix.html" target="_blank">
                     Learn More
                 </Button>

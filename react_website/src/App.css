@@ -17,9 +17,10 @@
   background-color: #f4f4f4;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: 'space-between';
   align-items: normal;
-  justify-content: normal;
+  /* justify-content: normal; */
   font-size: calc(10px + 2vmin);
   color: white;
 }
