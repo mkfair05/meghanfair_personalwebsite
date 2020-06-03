@@ -40,7 +40,6 @@ export default function BackToTop(props) {
             <Link href="https://www.linkedin.com/in/meghan-fair/" color="inherit" target="_blank" rel="noopener">
               <IconButton
                 aria-label="LinkedIn"
-                edge="none"
                 color="inherit"
                 >
                 <LinkedInIcon />
@@ -49,7 +48,6 @@ export default function BackToTop(props) {
             <Link href="https://www.github.com/mkfair05" color="inherit" target="_blank" rel="noopener">
               <IconButton
                 aria-label="Github"
-                edge="none"
                 color="inherit"
                 >
                 <GitHubIcon />

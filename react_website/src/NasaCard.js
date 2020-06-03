@@ -5,8 +5,9 @@ import {
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: '30%',
-    margin: '15px'
+    width: '30%',
+    margin: '15px',
+    height: '50%'
   },
   media: {
     height: '100%'
@@ -21,7 +22,7 @@ export default function ImgMediaCard() {
   const [date, setDate] = useState('');
   const [url, setUrl] = useState('')
   const [title, setTitle] = useState('')
-  const [explanation, setExplanation] = useState('')
+  // const [explanation, setExplanation] = useState('')
   
   useEffect(() => {
 
@@ -37,7 +38,7 @@ export default function ImgMediaCard() {
         let json = await fetchNasaImage();
         console.log(json)
         setDate(json.date);
-        setExplanation(json.explanation);
+        // setExplanation(json.explanation);
         setUrl(json.url)
         setTitle(json.title)
     };
@@ -49,7 +50,8 @@ export default function ImgMediaCard() {
         <Card className={classes.root}>
             <CardActionArea>
                 <CardMedia className={classes.media}
-                component="img"
+                //TODO: if the url is a youtube video
+                component="iframe"
                 alt="Nasa Image"
                 height="140"
                 src={url}
@@ -65,9 +67,9 @@ export default function ImgMediaCard() {
                     <Typography gutterBottom variant="h5" component="h2">
                     {date}
                     </Typography>
-                    <Typography className={classes.explanation}gutterBottom variant="h7" component="h2">
+                    {/* <Typography className={classes.explanation} gutterBottom variant="body2" component="p">
                     {explanation}
-                    </Typography>
+                    </Typography> */}
                 </CardContent>
             </CardActionArea>
             <CardActions>
