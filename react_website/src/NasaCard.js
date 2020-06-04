@@ -35,7 +35,7 @@ export default function ImgMediaCard() {
         <Card className={styles.cardRoot}>
             <CardActionArea>
                 <CardMedia className={styles.cardMedia}
-                //TODO: if the url is a youtube video
+                //TODO: change component depending on url type
                 component="iframe"
                 alt="Nasa Image"
                 height="140"

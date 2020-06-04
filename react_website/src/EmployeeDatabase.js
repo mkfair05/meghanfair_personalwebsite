@@ -15,7 +15,7 @@ export default function ImgMediaCard() {
   useEffect(() => {
 
     function fetchRandomImage () {
-        return fetch('https://picsum.photos/300')
+        return fetch('https://picsum.photos/400')
             .then((response) => { 
               return response;
         });
@@ -43,7 +43,7 @@ export default function ImgMediaCard() {
                     <Typography gutterBottom variant="h4" component="h2">
                       In Progress
                     </Typography>
-                    <Typography className={styles.explanation} gutterBottom variant="textSecondary" component="p">
+                    <Typography className={styles.explanation} gutterBottom variant="body2" component="p">
                       While I apply for Full Stack Developer positions, I am learning how to set up a database through Amazon Web Services.
                       I am doing this to show that I have the skill set for both front end and back end applications.
 

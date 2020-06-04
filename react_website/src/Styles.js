@@ -7,6 +7,8 @@ const useStyles = makeStyles({
       height: '75%'
     },
     cardMedia: {
+      display: 'flex',
+      flexDirection: 'column',
       height: '100%'
     },
     header: {

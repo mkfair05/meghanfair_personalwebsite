@@ -7,26 +7,6 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import IconButton from '@material-ui/core/IconButton';
 import Styles from './Styles'
 
-// const useStyles = makeStyles(theme => ({
-//   root: {
-//     position: 'fixed',
-//     bottom: theme.spacing(2),
-//     right: theme.spacing(2),
-//   },
-//   header: {
-//     backgroundColor: '#3c3c3c'
-//   },
-//   headerIcons: {
-//     display: 'inline-flex',
-//     justifyContent: 'space-evenly',
-//     position: 'relative',
-//   },
-//   headerItems: {
-//     display: 'flex',
-//     justifyContent: 'space-between'
-//   },
-// }));
-
 export default function BackToTop(props) {
   const styles = Styles();
 

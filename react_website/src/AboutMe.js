@@ -3,6 +3,7 @@ import Styles from './Styles'
 import { 
     Card, CardActionArea, CardContent, CardMedia, Typography
 } from '@material-ui/core';
+import img from './resume_photo2.jpg'
 
 export default function MediaCard() {
   const styles = Styles();
@@ -10,11 +11,12 @@ export default function MediaCard() {
   return (
     <Card className={styles.cardRoot}>
       <CardActionArea>
-        <CardMedia
-          className={styles.cardMedia}
+        <CardMedia className={styles.cardMedia}
+          component="img"
           //TODO: get photo of me
-        //   image="https://picsum.photos/200/300"
+          image={img}
           title="About Meghan"
+          height="140"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
